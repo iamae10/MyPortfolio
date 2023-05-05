@@ -1,0 +1,79 @@
+# MyPortfolio
+
+package PortfolioGUI;
+
+import java.awt.EventQueue;
+import java.awt.Image;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+
+public class mainFrame extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					mainFrame frame = new mainFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+     
+	/**
+	 * Create the frame.
+	 */
+	public mainFrame() {
+		setTitle("PORTFOLIO");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton mainframeButton = new JButton("MY PORTFOLIO");
+		mainframeButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				maincodes frame = new maincodes();
+				frame.setVisible(true);
+				
+				
+			}
+		});
+		mainframeButton.setBounds(153, 165, 127, 23);
+		contentPane.add(mainframeButton);
+		
+		JLabel imagglabel1 = new JLabel("");
+		imagglabel1.setBounds(167, 21, 113, 124);
+		contentPane.add(imagglabel1);
+		Image img = new ImageIcon(this.getClass().getResource("/final.png")).getImage();
+		imagglabel1.setIcon(new ImageIcon(img));
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 434, 261);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/bg.jpg"));
+		JLabel backgroundLabel = new JLabel(backgroundImage);
+		backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
+		getContentPane().add(backgroundLabel);
+		getContentPane().add(panel);
+	}
+
+}
