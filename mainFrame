@@ -1,5 +1,4 @@
 # MyPortfolio
-
 package PortfolioGUI;
 
 import java.awt.EventQueue;
@@ -13,6 +12,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import java.awt.Font;
 
 public class mainFrame extends JFrame {
 
@@ -40,40 +40,91 @@ public class mainFrame extends JFrame {
 	public mainFrame() {
 		setTitle("PORTFOLIO");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setSize(541, 432);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton mainframeButton = new JButton("MY PORTFOLIO");
-		mainframeButton.addActionListener(new ActionListener() {
+		JLabel lblNewLabel = new JLabel("PORTFOLIO");
+		lblNewLabel.setFont(new Font("Stencil", Font.PLAIN, 70));
+		lblNewLabel.setBounds(79, 68, 398, 60);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("portfolio");
+		lblNewLabel_1.setFont(new Font("Vladimir Script", Font.PLAIN, 85));
+		lblNewLabel_1.setBounds(127, 50, 276, 92);
+		contentPane.add(lblNewLabel_1);
+		
+		JButton btnNewButton = new JButton("Hobbies");
+		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				maincodes frame = new maincodes();
+				myhobbies frame = new myhobbies();
 				frame.setVisible(true);
-				
-				
 			}
 		});
-		mainframeButton.setBounds(153, 165, 127, 23);
-		contentPane.add(mainframeButton);
+		btnNewButton.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 12));
+		btnNewButton.setBounds(314, 243, 163, 23);
+		contentPane.add(btnNewButton);
 		
-		JLabel imagglabel1 = new JLabel("");
-		imagglabel1.setBounds(167, 21, 113, 124);
-		contentPane.add(imagglabel1);
-		Image img = new ImageIcon(this.getClass().getResource("/final.png")).getImage();
-		imagglabel1.setIcon(new ImageIcon(img));
+		JButton btnNewButton_2 = new JButton("Weaknesses");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				myweakness frame = new myweakness();
+				frame.setVisible(true);
+			}
+		});
+		btnNewButton_2.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 12));
+		btnNewButton_2.setBounds(314, 289, 163, 23);
+		contentPane.add(btnNewButton_2);
+		
+		JLabel lblNewLabel_2 = new JLabel("MY");
+		lblNewLabel_2.setFont(new Font("Tempus Sans ITC", Font.BOLD, 20));
+		lblNewLabel_2.setBounds(234, 50, 46, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JButton btnNewButton_4 = new JButton("About Me");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				aboutmeFrame frame = new aboutmeFrame();
+				frame.setVisible(true);
+			}
+		});
+		btnNewButton_4.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 12));
+		btnNewButton_4.setBounds(179, 194, 176, 23);
+		contentPane.add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("Skills");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				myskills frame = new myskills();
+				frame.setVisible(true);
+			}
+		});
+		btnNewButton_5.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 12));
+		btnNewButton_5.setBounds(56, 243, 176, 23);
+		contentPane.add(btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("Strength");
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				mystrength frame = new mystrength();
+				frame.setVisible(true);
+			}
+		});
+		btnNewButton_6.setFont(new Font("Tw Cen MT Condensed Extra Bold", Font.PLAIN, 12));
+		btnNewButton_6.setBounds(56, 289, 176, 23);
+		contentPane.add(btnNewButton_6);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 434, 261);
+		panel.setBounds(0, 0, 525, 393);
 		contentPane.add(panel);
-		panel.setLayout(null);
-		ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/bg.jpg"));
+		ImageIcon backgroundImage = new ImageIcon(getClass().getResource("/gradient.jpg"));
 		JLabel backgroundLabel = new JLabel(backgroundImage);
 		backgroundLabel.setBounds(0, 0, backgroundImage.getIconWidth(), backgroundImage.getIconHeight());
 		getContentPane().add(backgroundLabel);
 		getContentPane().add(panel);
+		
 	}
-
 }
