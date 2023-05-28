@@ -6,7 +6,7 @@ public class Portfolio extends PortfolioFrame {
 	public void home()   {
 		myPortfolio frame = new myPortfolio();
 		frame.setVisible(true);    
-		}
+	}
 	public void About() {
 		about frame1 = new about();
 		frame1.setVisible(true);
